@@ -39,19 +39,19 @@ public class FornadaService {
         Optional<Fornada> resultado = this.fornadaRepository.findById((long) id);
 
         if (resultado.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fornada não encontrada");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fornada não encontrada.");
         } else {
             return ResponseEntity.ok(resultado.get());
         }
     }
 
     public ResponseEntity<?> deleteById(int id) {
-        Optional<Fornada> clienteResultante = fornadaRepository.findById((long) id);
+        Optional<Fornada> fornadaResultante = fornadaRepository.findById((long) id);
 
-        if (clienteResultante.isPresent()) {
-            Fornada fornada = clienteResultante.get();
+        if (fornadaResultante.isPresent()) {
+            Fornada fornada = fornadaResultante.get();
             fornadaRepository.deleteById((long) id);
-            return ResponseEntity.ok("Fornada deletada com sucesso");
+            return ResponseEntity.ok("Fornada deletada com sucesso.");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fornada não encontrada.");
         }

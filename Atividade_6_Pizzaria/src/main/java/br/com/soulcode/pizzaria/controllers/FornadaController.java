@@ -36,7 +36,7 @@ public class FornadaController {
     }
 
     @PutMapping(value = "/editar-fornada/{id}")
-    public ResponseEntity<Fornada> updateById(@RequestBody Fornada fornada, @PathVariable long id) {
+    public ResponseEntity<Fornada> updateById(@RequestBody Fornada fornada, @PathVariable int id) {
         return fornadaService.updateById(fornada, id);
     }
 
